@@ -1,0 +1,98 @@
+:root {
+  --font-color: white;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #e3e3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.player {
+  max-width: 80vw;
+  min-width: 800px;
+  border:5px solid black;
+  border-radius: 10px;
+  background: black;
+  position: relative;
+  cursor: pointer;
+}
+
+.video {
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+
+/* containers */
+.show-controls {
+  width: 100%;
+  height: 30%;
+  background: dodgerblue;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  cursor: default;
+}
+
+.controls-container {
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 95px;
+  margin-top: -95px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* proress Bar */
+.progress-range {
+  margin: auto;
+  border-radius: 10px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.progress-bar {
+  background: grey;
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+
+/* left controls */
+.controls-left {
+  justify-content: flex-start;
+  margin-left: 15px;
+}
+
+/* play & pause */
+.play-controls {
+  margin-right: 15px;
+}
+  
+
+/* @media Query: Large Smartphone (vertical) */
+@media screen and (max-width: 600px) {
+
+  .player { 
+    min-width: 0;
+    max-width: 95vw;
+  }
+
+}
