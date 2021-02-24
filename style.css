@@ -1,5 +1,6 @@
 :root {
   --font-color: white;
+  --primary-color: dodgerblue;
 }
 
 html {
@@ -43,7 +44,6 @@ body {
 .show-controls {
   width: 100%;
   height: 20%;
-  background: dodgerblue;
   z-index: 2;
   position: absolute;
   bottom: 0;
@@ -61,7 +61,13 @@ body {
   z-index: 5;
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transition: all 0.5s ease-out 2s;
 }
+.show-controls:hover .controls-container {
+  opacity: 1;
+  transition: all 0.2s ease-out;
+} 
 
 /* proress Bar */
 /* .progress-range {
@@ -76,16 +82,17 @@ body {
     border-radius: 10px;
     position: absolute;
     top: 15px;
+    left: 15px;
     cursor: pointer;
-    background: white;
+    background: rgba(202, 202, 202, 0.5);
     height: 8px;
-    width: 100%;
+    width: calc(100% - 30px);
   }
 
 
 .progress-bar {
-  background: grey;
-  width: 50%;
+  background:var(--primary-color);
+  width: 20%;
   height: 100%;
   border-radius: 10px;
   transition: all 0.5s ease;
@@ -97,21 +104,20 @@ body {
   width: 100%;
   height: 87px;
   justify-content: space-between;
-  position: absolute;
 }
 
 
 /* left controls */
 .controls-left {
   justify-content: flex-start;
-  margin-left: 15px;
+  margin-left: -13px;
   width:50%;
   position: relative;
   bottom: 8px;
 }
 
 /* play & pause */
-.play-controls {
+.play-controls { 
   margin-right: 15px;
   display: flex;
   top: 13px;
@@ -123,7 +129,7 @@ body {
 
 .fa-play:hover,
 .fa-pause:hover {
-  color:indianred;
+  color: var(--primary-color);
   cursor: pointer;
 }
   
@@ -156,7 +162,7 @@ body {
 }
 
 .volume-bar:hover {
-  background: indianred;
+  background: var(--primary-color);
 }
 
 
@@ -164,8 +170,9 @@ body {
 /* controls right */
 .controls-right {
   justify-content: flex-end;
-  margin-right: 15px;
+  margin-right: -27px;
   display: flex;
+  overflow: hidden;
   bottom: 45px;
 }
 
@@ -187,8 +194,19 @@ body {
 
 }
 
-select {
+select,
+option {
+cursor: pointer;
+}
 
+select,
+.time {
+  color: var(--font-color);
+  background: transparent;
+}
+
+select:focus {
+  outline: none;
 }
 /* @media Query: Large Smartphone (vertical) */
 @media screen and (max-width: 600px) {
