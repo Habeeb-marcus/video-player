@@ -69,14 +69,6 @@ body {
   transition: all 0.2s ease-out;
 } 
 
-/* proress Bar */
-/* .progress-range {
-  margin: auto;
-  border-radius: 10px;
-  position: absolute;
-  left: 15px;
-  top: 15px;
-  cursor: pointer; */
   .progress-range {
     margin: auto;
     border-radius: 10px;
@@ -179,8 +171,14 @@ body {
 .fullscreen {
   position: relative;
   top: 20px;
+  cursor: pointer;
 }
 
+/* .video-fullscreen {
+  position: relative;
+  top: 20%;
+  transform: translateY(-30%);
+} */
 .speed, 
 .time {
   position: relative;
