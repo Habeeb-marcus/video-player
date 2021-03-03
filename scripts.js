@@ -128,7 +128,7 @@ function openFullscreen(elem) {
   } else if (elem.msRequestFullscreen) { /* IE11 */
     elem.msRequestFullscreen();
   }
-  // video.classList.add('video-fullscreen');
+  video.classList.add('video-fullscreen');
 }
 
 /* Close fullscreen */
@@ -140,7 +140,7 @@ function closeFullscreen() {
   } else if (document.msExitFullscreen) { /* IE11 */
     document.msExitFullscreen();
   }
-  // video.classList.remove('video-fullscreen');
+  video.classList.remove('video-fullscreen');
 }
 
 

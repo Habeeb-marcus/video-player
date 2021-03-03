@@ -28,7 +28,7 @@ body {
 .player {
   max-width: 80vw;
   min-width: 800px;
-  border:5px solid black;
+  border: 5px solid black;
   border-radius: 10px;
   background: black;
   position: relative;
@@ -49,11 +49,11 @@ body {
   position: absolute;
   bottom: 0;
   cursor: default;
-  }  
+}
 
 .controls-container {
   position: absolute;
-  bottom: -5px;
+  bottom: 5px;
   width: 100%;
   height: 95px;
   margin-top: -95px;
@@ -63,36 +63,33 @@ body {
   display: flex;
   justify-content: space-between;
   opacity: 0;
-  transition: all 0.5s ease-out 2s; 
+  transition: all 0.5s ease-out 2s;
   overflow: hidden;
 }
-
 
 .show-controls:hover .controls-container {
   opacity: 1;
   transition: all 0.2s ease-out;
-  
-} 
+}
 
-  .progress-range {
-    margin: auto;
-    border-radius: 10px;
-    /* position: absolute; */
-    top: 15px;
-    left: 15px;
-    cursor: pointer;
-    background: rgba(202, 202, 202, 0.5);
-    height: 8px;
-    width: calc(100% - 30px);
-  }
+.progress-range {
+  margin: auto;
+  border-radius: 10px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  background: rgba(202, 202, 202, 0.5);
+  height: 8px;
+  width: calc(100% - 30px);
+}
 
-  .progress-range:hover {
-    height: 10px;
-  }
-
+.progress-range:hover {
+  height: 10px;
+}
 
 .progress-bar {
-  background:var(--primary-color);
+  background: var(--primary-color);
   width: 20%;
   height: 100%;
   border-radius: 10px;
@@ -100,23 +97,25 @@ body {
 }
 
 .control-group {
-  /* background: goldenrod; */
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  bottom: -3px;
 }
-
 
 /* left controls */
 .controls-left {
   justify-content: flex-start;
-  margin-left: 15px;
- } 
+  margin-left: 3px;
+  position: relative;
+  top: 16px;
+
+}
 
 /* play & pause */
-.play-controls { 
-  margin-right: 15px;
+.play-controls {
   display: flex;
   top: 13px;
   position: absolute;
@@ -128,15 +127,14 @@ body {
   color: var(--primary-color);
   cursor: pointer;
 }
-  
 
 /* volume */
 .volume-icon {
   cursor: pointer;
-  top: 27px;
+  top: 29px;
   position: absolute;
-  left: 76px; 
-} 
+  left: 70px;
+}
 
 .volume-range {
   height: 8px;
@@ -144,11 +142,11 @@ body {
   background: rgba(70, 70, 70, 0.5);
   border-radius: 10px;
   position: relative;
-  top: -21px;
-  left: 50px;
+  top: 44px;
+  left: 134px;
   cursor: pointer;
-  /* margin-left: 15px; */
 }
+
 .volume-bar {
   background: var(--font-color);
   width: 100%;
@@ -161,30 +159,28 @@ body {
   background: var(--primary-color);
 }
 
-
-
 /* controls right */
-.controls-right{
+.controls-right {
   justify-content: flex-end;
   margin-right: 15px;
+  top: 46px;
 }
+
 .controls-right,
 .control-left {
-  /* margin-right: -27px; */
-  flex: 1;
   overflow: hidden;
   position: relative;
-  top: 40px;
+  display: flex;
 }
 
 .fullscreen {
   position: relative;
-  top: 20px;
+  top: 2px;
+  left: 14px;
   cursor: pointer;
 }
 
-
-.speed, 
+.speed,
 .time {
   position: relative;
   top: 10px;
@@ -193,7 +189,6 @@ body {
 /* playback speed */
 .speed {
   margin-right: 15px;
-
 }
 
 select {
@@ -209,7 +204,7 @@ select {
 select:focus {
   outline: none;
 }
- 
+
 select > option {
   background: rgba(0, 0, 0, 0.9);
   border: none;
@@ -218,7 +213,7 @@ select > option {
 
 select,
 option {
-cursor: pointer;
+  cursor: pointer;
 }
 
 select,
@@ -227,20 +222,15 @@ select,
   background: transparent;
 }
 
-
-
 .video-fullscreen {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
 
-
-
 /* @media Query: Large Smartphone (vertical) */
 @media screen and (max-width: 600px) {
-
-  .player { 
+  .player {
     min-width: 0;
     max-width: 95vw;
   }
@@ -255,5 +245,25 @@ select,
 
   .control-group {
     position: relative;
+    bottom: 15px;
+  }
+
+  .volume-icon {
+    left: 50px;
+    top: 29px;
+  }
+
+  .volume-range {
+    width: 45px;
+    left: 84px;
+    top: 35px;
+  }
+
+  .controls-right {
+    top: 35px;
+  }
+
+  .fullscreen {
+    top: 9px;
   }
 }
